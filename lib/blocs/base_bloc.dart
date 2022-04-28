@@ -5,7 +5,7 @@ abstract class BaseBloc<State, Event> {
     _eventStreamController.stream.listen(mapEventToState);
   }
 
-  final _stateStreamController = StreamController<State>.broadcast();
+  final _stateStreamController = StreamController<State>;
   Stream<State> get stateStream => _stateStreamController.stream;
 
   void addState(State state) {
